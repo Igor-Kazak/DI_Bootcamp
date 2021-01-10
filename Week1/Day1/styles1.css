@@ -1,0 +1,60 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#top, #mid {
+    width: 100%; 
+    padding-left: 60px; 
+    padding-right: 60px; 
+    margin-bottom: 10px;
+}
+
+#try {
+    height: 40px; 
+    width: 120px;
+    text-align: right; 
+    color: white; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mid {
+    margin-top: 50px;
+    text-align: center;
+
+}
+
+button {
+    color: white;
+    background-color: blue;
+    height: 30px; 
+    width: 120px;
+    border-radius: 6px; 
+    border: 0px;
+}
+
+input {
+    height: 24px; 
+    width: 300px;
+    border-radius: 6px; 
+    border: 1px solid grey;
+    margin-right: 10px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+#content {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://hackaday.com/wp-content/uploads/2018/02/blackholes.jpg");
+    background-size: 100%;
+    background-position: center;
+}
