@@ -1,0 +1,103 @@
+#container{
+    display: grid;
+    width: 170px;
+    grid-template-columns: 150px;
+    background-color: lightgrey;
+    padding: 10px 0px 5px 0px;
+    grid-template-areas: 
+    'a'
+    'b'
+    'c';
+}
+
+.box{
+    display: flex;
+    justify-self: start;
+    flex-wrap: wrap;
+    width: 130px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+#boxone{
+    grid-area: a;
+}
+
+#boxtwo{
+    grid-area: b;
+    width: 150px;
+}
+
+#boxthree{
+    grid-area: c;
+}
+
+.orange{
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    border: 1px solid white;
+}
+
+.orange1{
+    width: 10px;
+    height: 10px;
+    background-color:burlywood;
+    border: 1px solid white;
+}
+
+.brown{
+    width: 10px;
+    height: 10px;
+    background-color:brown;
+    border: 1px solid white;
+}
+
+.grey1{
+    width: 10px;
+    height: 10px;
+    background-color:lightgrey;
+    border: 1px solid white;
+}
+
+.grey2{
+    width: 10px;
+    height: 10px;
+    background-color:gray;
+    border: 1px solid white;
+}
+
+.grey3{
+    width: 10px;
+    height: 10px;
+    background-color:darkgrey;
+    border: 1px solid white;
+}
+
+.black{
+    width: 10px;
+    height: 10px;
+    background-color:black;
+    border: 1px solid white;
+}
+
+.white{
+    width: 10px;
+    height: 10px;
+    background-color:white;
+    border: 1px solid white;
+}
+
+.pink1{
+    width: 10px;
+    height: 10px;
+    background-color:lightcoral;
+    border: 1px solid white;
+}
+
+.red{
+    width: 10px;
+    height: 10px;
+    background-color:red;
+    border: 1px solid white;
+}
