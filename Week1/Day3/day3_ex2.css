@@ -1,0 +1,33 @@
+#content{
+    border: 2px solid red;
+    margin: 25px 20px 20px 20px;
+    display: flex;
+    
+    flex-direction: column;
+}
+
+.items{
+    background-color: lightblue;
+    margin: 5px 5px 5px 5px;
+    text-align: center;
+    color: white;
+    font-size: 10ex;
+    padding: 40px 10px 40px 10px;
+    justify-content: center;
+}
+
+#d1{
+
+}
+
+#d2{
+    display: flex;
+    align-self: flex-end;
+    margin: 0px 5px 0px 5px;
+    width: 20%;
+    text-align: center;
+}
+
+#d3{
+
+}

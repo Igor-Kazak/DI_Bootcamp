@@ -1,0 +1,29 @@
+#content{
+    border: 2px solid red;
+    margin: 25px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.items{
+    background-color: lightblue;
+    margin: 5px 5px 5px 5px;
+    text-align: center;
+    color: white;
+    font-size: 10ex;
+    padding: 50px 5px 50px 5px;
+}
+
+#d1{
+    align-self: center;
+    width: 50%;
+}
+
+#d2{
+    margin: 0px 5px 0px 5px;
+}
+
+#d3{
+    align-self: center;
+    width: 50%;
+}

@@ -1,0 +1,31 @@
+#content{
+    border: 2px solid red;
+    margin: 25px 20px 20px 20px;
+    display: flex;
+    padding: 50px 20px 50px 20px;
+    flex-direction: row;
+}
+
+.items{
+    background-color: lightblue;
+
+    text-align: center;
+    color: white;
+    font-size: 6ex;
+    padding: 10px 0px 10px 0px;
+    justify-content: center;
+}
+
+#d1{
+    width: 20%;
+    background-color: darkmagenta;
+}
+
+#d2{
+    width: 40%;
+}
+
+#d3{
+    width: 40%;
+    background-color: hotpink;
+}
