@@ -1,0 +1,36 @@
+#container {
+    display: grid;
+    grid-template-columns: 20% 60% 20% ;
+    height: 95%;
+    width: 100%;
+}
+
+.lside {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.rside {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+
+}
+
+.centre {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.element{
+    border: 1px solid black;
+    background-color: yellow;
+    width: 130px;
+    height: 130px;
+    margin: 10px 10px 10px 10px;
+}
