@@ -1,0 +1,90 @@
+body {
+    background-image: url("map.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#content{
+    height: 95vh;
+    display: grid;
+    margin: 1% 10% 1% 10%;
+    grid-template-rows: 20% 30% 50%;
+    grid-template-areas: 
+    'top'
+    'middle'
+    'revs';
+}
+
+.inside{
+    margin: 5px 5px 5px 5px;
+    text-align: center;
+    color: grey;
+
+}
+
+#top{
+    grid-area: top;
+    padding: 2% 20% 1% 20%;
+    font-size: xx-large;
+    font-weight: bold;
+    color: black;
+}
+
+#figures{
+    grid-area: middle;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.digits{
+
+}
+
+.digits h1 {
+    color: darkblue;
+}
+
+#block{
+    grid-area: revs; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#review1{
+    align-self: flex-start;
+    height: 80%;
+
+    background-color: cornflowerblue;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+#review2{
+    align-self: flex-end;
+    height: 80%;
+    background-color:lightsalmon;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+#review3{
+    align-self: center;
+    height: 80%;
+    background-color: lightpink;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.revtop{
+    text-align: left;
+    padding: 10px 10px 10px 10px;
+    background-color: white;
+    height: 60%;
+}
+
+.revbot{
+    padding-top: 5px;
+    color: white;
+    font-weight: bold;
+
+}
