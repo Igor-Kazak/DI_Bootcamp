@@ -1,0 +1,10 @@
+.demo-content{
+    padding: 20px;
+    font-size: 20px;
+    background-color: aquamarine;
+    margin-bottom: 20px;
+}
+
+.demo-content.bg-alt{
+    background-color: cornflowerblue;
+}
