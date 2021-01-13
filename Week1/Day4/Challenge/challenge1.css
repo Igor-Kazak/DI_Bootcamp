@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+#top {
+    background-image: url("https://nationwide-appraisal.com/wp-content/uploads/2014/09/shutterstock_41824678.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    padding: 1% 10% 1% 10%;
+}
+
+#bottom {
+    padding: 5% 10% 1% 10%;
+    color: blue;
+}
+
+#advert {
+    color: black;
+    width: 100%;
+    text-align: center;
+    padding-top: 5%;
+}
+
+#text div {
+    color: darkgray;
+}
+
+.cont{
+    padding: 5px 10px 10px 10px;
+    margin: 5px 10px 10px 20px;
+}
