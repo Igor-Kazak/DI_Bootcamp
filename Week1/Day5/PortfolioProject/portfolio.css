@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+body {
+    background-color: rgb(236, 236, 236);
+}
+
+.navbar, .btn{
+    background-color: rgb(255, 115, 0);
+    color: white;
+}
+
+#hello{
+    background-image: url("./images/headerback.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 10% 15% 20% 15%;
+}
+
+h1{
+    color: rgb(255, 115, 0);
+}
+
+#imgr{
+    border-radius: 50%; 
+    margin: 10px 10px 10px 10px ;
+}
+
+#aboutme, #portfolio, #blog, #ourteam, #getintouch {
+    padding: 2% 15% 2% 15%;
+    text-align: center;
+    color: gray;
+}
+
+.card-body {
+    text-align: start;
+    padding: 10% 3% 3% 10%;
+}
+
+#portfolio .col{
+    margin: 2% 2% 2% 2%;
+}
+
+#blog h1{
+    margin-bottom: 2%;
+}
+
+#aboutme .card{
+    background-color: rgb(236, 236, 236);   
+    border: 0px;
+}
+
+#ourteam .card{
+    margin: 1% 1% 1% 1%;
+}
+
+#getintouch .col-sm-4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#getintouch .btn{
+    width: 100%;
+}
