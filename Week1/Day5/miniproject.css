@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .navbar{
+      padding: 1% 5% 1% 5%;
+  }
+
+  #greybox{
+      background-color: rgb(230, 230, 230);
+      width: 100%;
+      height: auto;
+      padding: 3% 6% 5% 6%;
+      font-size: x-large;
+  }
+
+  #three{
+    width: 100%;
+    height: auto;
+    padding: 1% 6% 1% 6%;
+  }
+
+  .btn-light{
+      border: 1px solid lightgrey;
+  }
+
+  .card{
+      border: 0px;
+  }
+
+.bi-hand-thumbs-up{
+    color: blue;
+}
