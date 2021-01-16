@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+    var state = true;
+    var found = false;
+
+    while (state) {
+
+        var str = prompt('Enter your string');
+        var strarr = str.split(" ");
+
+        for (i = 0; i < strarr.length; i++) {
+            if (strarr[i]=='Nemo') {
+                alert('I found Nemo at ' + (i+1) + '!');
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            alert('I can’t find Nemo')
+        }
+
+        found = false;
+        state = confirm('One more operation?');
+    }
+
+    </script>
+
+</body>
+</html>
