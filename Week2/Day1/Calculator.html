@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+    var state = true;
+
+    while (state) {
+
+        var a = prompt('Enter the first number');
+        var b = prompt('Enter the second number');
+        var op = prompt('Enter the operation');
+        var result = 0;
+
+        switch (op) {
+            case '+':
+                result = a + b;
+                break;
+            case '-':
+                result = a - b;
+                break;
+            case '*':
+                result = a * b;
+                break;
+            case '/':
+                result = a / b;
+                break;
+            case '%':
+                result = a % b;
+                break;
+            case 'exp':
+                result = 1;
+                for (i = 0; i < b; i++) {
+                    result *= a;
+                }
+                break;
+            default:
+                result = 'Unknown operation';
+        }
+
+        alert('The result is: ' + result);
+
+        state = confirm('One more operation?');
+
+    }
+
+    </script>
+
+</body>
+</html>
