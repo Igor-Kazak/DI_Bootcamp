@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+    var state = true;
+
+    while (state) {
+
+        var boom = 'boom';
+        var n = prompt('Enter a number:');
+
+        if (n > 1) {
+            for (i = 2; i < n; i++) {
+                boom = boom.replace('o', 'oo')
+            }
+            switch (n > 1) {
+                case (n % 5 == 0 && n % 2 == 0):
+                    boom += "!";
+                    boom = boom.toUpperCase();
+                    break;
+                case (n % 2 == 0):
+                    boom += "!";
+                    break;
+                case (n % 5 == 0):
+                    boom = boom.toUpperCase();
+                    break;
+            }
+            alert(boom);
+        }
+        else {
+            alert(boom);
+        }
+
+
+        state = confirm('One more operation?');
+    }
+
+    </script>
+
+</body>
+</html>

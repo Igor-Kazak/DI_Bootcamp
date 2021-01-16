@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+    var str = prompt('Enter a string of numbers separated by a comma and space');
+    var strarr = str.split(", ");
+    var result = 1;
+
+    for (i = 0; i < strarr.length; i++) {
+        result*=strarr[i];
+    }
+
+    alert('The product of the numbers is: ' + result);
+
+    </script>
+
+</body>
+</html>
