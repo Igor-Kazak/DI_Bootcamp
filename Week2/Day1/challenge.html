@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+    var fruits = ["Banana", "Apples", "Oranges", "Blueberries"];
+    fruits.shift(); 
+    fruits.sort(); 
+    fruits.push("Kiwi");
+    fruits.splice(0, 1); 
+    fruits.reverse();
+    console.log(fruits);
+
+    var moreFruits = ["Banana", ["Apples", ["Oranges"], "Blueberries"]];
+    console.log(moreFruits[1][1][0]);
+
+    </script>
+
+</body>
+</html>
