@@ -1,12 +1,14 @@
 var str = '';
+var elem = document.getElementById('calc');
 
 function num(argument){
     str = str.concat('', argument);
+    elem.innerHTML = str;
 }
 
 function enter(){
-    alert('Result is: ' + eval(str));
-    reset();
+    elem.innerHTML = eval(str);
+    str = '';
 }
 
 function clear(){
@@ -15,4 +17,5 @@ function clear(){
 
 function reset(){
     str = '';
+    elem.innerHTML = '0';
 }
