@@ -1,0 +1,1 @@
+document.getElementById("text").classList.toggle("newstyle");
