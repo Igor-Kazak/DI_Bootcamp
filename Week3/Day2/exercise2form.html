@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <select id="select1">
+        <option value="apple">Middle School</option>
+        <option value="pear">University</option>
+        <option value="banana">College</option>
+    </select>
+
+    <script>
+
+        function life() {
+            let opt = document.getElementById('select1');
+            
+            console.log(opt.children[1].getAttribute('value'));
+            
+            opt.appendChild(document.createElement('option'));
+            opt.lastElementChild.setAttribute('value', 'Work');
+            opt.lastElementChild.appendChild(document.createTextNode('Work'));
+
+            opt.insertBefore(document.createElement('option'), opt.firstElementChild);
+            opt.firstElementChild.setAttribute('value', 'Primary School');
+            opt.firstElementChild.appendChild(document.createTextNode('Primary School'));
+
+            opt.selectedIndex = 3;
+
+            let btn = document.body.appendChild(document.createElement('button'));
+            btn.appendChild(document.createTextNode('Confirm'));
+            btn.setAttribute('type', 'button');
+            btn.setAttribute('onclick', "alert('Your choise: ' + document.getElementById('select1').children[document.getElementById('select1').selectedIndex].innerHTML)");
+        }
+        life();
+
+    </script>
+
+</body>
+
+</html>
