@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <button id="jsstyle">Style</button>
+    </div>
+
+<script>
+    let btn = document.getElementById('jsstyle');
+    let dv = document.getElementsByTagName('div')[0];
+
+    dv.addEventListener("click", dvClick);
+
+    btn.addEventListener("mouseover", btnMouseOver);
+    btn.addEventListener("mouseout", btnMouseOut);
+    btn.addEventListener("click", btnClick);
+
+    function dvClick(e) {
+        dv.style.background = 'red';
+    }
+    
+    function btnClick(e) {
+        btn.style.background = 'red';
+        e.stopPropagation()
+    }
+
+    function btnMouseOver(e) {
+        btn.style.background = 'blue';
+    }
+
+    function btnMouseOut(e) {
+        btn.style.background = 'lightgrey';
+    }
+
+
+</script>
+
+</body>
+</html>
