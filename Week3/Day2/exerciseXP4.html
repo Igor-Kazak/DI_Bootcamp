@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Volume of a Sphere</title>
+    <style>
+        body {
+            padding-top: 30px;
+        }
+
+        label,
+        input {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="btn">Click me</button>
+
+    <script>
+
+        let btn = document.getElementById('btn');
+        btn.addEventListener("mouseover", mouseOver);
+        btn.addEventListener("mouseout", mouseOut);
+        btn.addEventListener("click", click);
+
+        function click() {
+            if (btn.style.fontSize == '2em') {
+                btn.style.fontSize = '100%';
+            }
+            else {
+                btn.style.fontSize = '2em';
+            }
+        }
+
+        function mouseOver() {
+            btn.style.background = 'blue';
+        }
+
+        function mouseOut() {
+            btn.style.background = 'lightgrey';
+        }
+
+    </script>
+</body>
+
+</html>
