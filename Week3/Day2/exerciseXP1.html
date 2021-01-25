@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <article>
+        <h1> Some Facts </h1>
+        <h2> The Chocolate </h2>
+        <p> Chocolate is made from tropical Theobroma cacao tree seeds.
+            Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+        <p> After the European discovery of the Americas, chocolate became
+            very popular in the wider world, and its demand exploded. </p>
+        <p> Chocolate has since become a popular food product that millions enjoy every day,
+            thanks to its unique, rich, and sweet taste.</p>
+        <p> But what effect does eating chocolate have on our health?</p>
+    </article>
+    <form>
+        <label>What is your name?</label><input type="text" name="userName">
+        <label>What did you think of the article?</label><input type="text" name="questionToUser">
+    </form>
+
+    <script>
+        let plist = document.getElementsByTagName('p');
+        for (let i=0; i < plist.length; i++){
+            plist[i].classList.add('para_article');
+        }
+        document.getElementsByTagName('article')[0].lastElementChild.remove();
+        document.getElementsByTagName('h2')[0].addEventListener('click', function premove(){
+            document.getElementsByTagName('h2')[0].remove();
+        });
+        document.getElementsByTagName('h1')[0].style.fontSize = parseInt(Math.random()*100)+'px';
+        plist[0].addEventListener('click', function hide(){
+            plist[0].style.display = "none";
+        });
+        let result1 = document.body.appendChild(document.createElement('p'));
+        document.forms[0].children[1].oninput = function() {
+            result1.innerHTML = this.value;
+        }
+        let result2 = document.body.appendChild(document.createElement('p'));
+        document.forms[0].children[3].oninput = function() {
+            result2.innerHTML = this.value;
+        }
+        plist[1].addEventListener('click', function hide(){
+            plist[1].style.visibility = "hidden";
+            setTimeout(() => {  plist[1].style.visibility = "visible"; }, 2000);
+        });
+    </script>
+
+</body>
+
+</html>
