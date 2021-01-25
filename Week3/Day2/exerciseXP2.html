@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p><strong>Hello</strong> I hope you are enjoying <strong>this</strong> class. At the
+        <strong>end</strong> you <strong>will</strong> be great Developers!
+        <strong>Enjoy</strong> the <strong>JavaScript </strong> lessons
+    </p>
+
+    <script>
+
+        document.getElementsByTagName('p')[0].setAttribute('onmouseover', 'highlight()');
+        document.getElementsByTagName('p')[0].setAttribute('onmouseout', 'return_normal()');
+
+        function getBold_items(){
+            let boldlist = document.getElementsByTagName('strong');
+            return boldlist;
+        }
+
+        function highlight(){
+            let list = getBold_items();
+            for (let i = 0; i < list.length; i++){
+                list[i].style.color = 'blue';
+            }
+        }
+
+        function return_normal(){
+            let list = getBold_items();
+            for (let i = 0; i < list.length; i++){
+                list[i].style.color = 'black';
+            }
+        }
+
+    </script>
+
+</body>
+</html>
