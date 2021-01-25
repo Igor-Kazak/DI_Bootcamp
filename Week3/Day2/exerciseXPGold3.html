@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script>
+        var root = document.getElementById('root');
+        var frm = document.createElement('form');
+        root.appendChild(frm);
+        var txt = document.createElement('input');
+        txt.setAttribute('type', 'text');
+        frm.appendChild(txt);
+        var btnadd = document.createElement('input');
+        btnadd.setAttribute('type', 'submit');
+        btnadd.value = 'Add';
+        btnadd.addEventListener('click', fadd);
+        frm.appendChild(btnadd);
+        var btnclr = document.createElement('input');
+        btnclr.setAttribute('type', 'submit');
+        btnclr.value = 'Clear all';
+        btnclr.addEventListener('click', fclr);
+        frm.appendChild(btnclr);
+        var btncnt = document.createElement('input');
+        btncnt.setAttribute('type', 'submit');
+        btncnt.value = 'Number of items';
+        btncnt.addEventListener('click', fcnt);
+        frm.appendChild(btncnt);
+
+        function fadd(event){
+            event.preventDefault();
+            let p = document.createElement('p');
+            let item = document.createTextNode(txt.value);
+            p.appendChild(item);
+            root.appendChild(p);
+            txt.value = '';
+        }
+
+        function fclr(){
+            for (let i = 1; i < root.childElementCount; i++){
+                root.children[i].remove;
+            }
+        }
+
+        function fcnt(event){
+            event.preventDefault();
+            alert('Number of items: ' + (root.childElementCount-1));
+        }
+        
+
+
+    //<form id="MyForm">
+    //    <label for="radius">Radius</label><input type="text" name="radius" id="radius" required>
+    //    <label for="volume">Volume</label><input type="text" name="volume" id="volume">
+    //    <input type="submit" value="Calculate" id="submit">
+    //</form>
+
+
+    </script>
+</body>
+
+</html>
