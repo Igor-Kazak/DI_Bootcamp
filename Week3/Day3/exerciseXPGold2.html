@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            overflow: hidden;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        #box {
+            padding: 50px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p id="box">A</p>
+    </div>
+
+    <script>
+
+        let element = document.getElementById('box');
+
+            element.setAttribute('draggable', 'true');
+
+            element.addEventListener("dragstart", function (event) {
+                event.target.style.backgroundColor = "lightpink";
+                console.log("drag " + "X: " + event.clientX + " Y: " + event.clientY);
+            });
+
+            element.addEventListener("dragend", function (event) {
+                event.target.style.backgroundColor = "lightgreen";
+                let x = event.clientX;
+                let y = event.clientY;
+                console.log(event)
+                event.target.style.left = x + "px";
+                event.target.style.top = y + "px";
+                event.target.style.position = "absolute";
+                console.log("dragend" + "X: " + event.clientX + " Y: " + event.clientY);
+                event.target.style.fontSize = ((x+y)/10) + "px";
+            });
+
+    </script>
+
+</body>
+
+</html>
