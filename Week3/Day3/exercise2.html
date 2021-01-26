@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p style="color: red; border: 1px solid lightgray; background-color: lightgoldenrodyellow;
+    width: 300px; margin: 20px 20px 20px 20px; padding: 10px 10px 10px 10px; text-align: center;
+    visibility: hidden;">"The sales end in 10sec !"</p>
+
+
+    <script>
+
+        var banner = document.getElementsByTagName('p')[0];
+        var sec = 10;
+        var timer;
+
+        setTimeout(function(){ 
+            banner.style.visibility = 'visible';
+            timer = setInterval(countd, 1000);
+        }, 5000);
+
+        function countd(){
+            if (sec > 0){
+                banner.textContent = 'The sales end in ' + --sec + 'sec !';
+            }
+            else{
+                clearInterval(timer);
+            }
+        }
+
+    </script>
+
+</body>
+</html>

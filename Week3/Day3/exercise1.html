@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p style="color: red; border: 1px solid lightgray; background-color: lightgoldenrodyellow;
+    width: 300px; margin: 20px 20px 20px 20px; padding: 10px 10px 10px 10px; text-align: center;
+    visibility: hidden;">"The sales end in 10min !"</p>
+
+
+    <script>
+
+        setTimeout(function(){ 
+            document.getElementsByTagName('p')[0].style.visibility = 'visible'; 
+        }, 5000);
+
+    </script>
+
+</body>
+</html>
