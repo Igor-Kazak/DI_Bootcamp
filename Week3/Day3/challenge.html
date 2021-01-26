@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Volume of a Sphere</title>
+
+</head>
+
+<body>
+
+    <form>
+        <input type="text">
+    </form>
+
+    <script>
+        var volume = document.forms[0].children[0];
+        volume.onkeyup = function (event) {
+            var str = volume.value;
+            var x = event.keyCode;
+            if (x < 65 || x > 122 || (x > 90 && x < 97)) {
+                volume.value = str.slice(0, -1);
+            }
+        };
+    </script>
+</body>
+
+</html>
