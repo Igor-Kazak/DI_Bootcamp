@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            overflow: hidden;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .box {
+            padding: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="box">A</span>
+        <span class="box">B</span>
+        <span class="box">C</span>
+        <span class="box">D</span>
+        <span class="box">E</span>
+        <span class="box">F</span>
+        <span class="box">G</span>
+        <span class="box">H</span>
+        <span class="box">I</span>
+        <span class="box">J</span>
+        <span class="box">K</span>
+        <span class="box">L</span>
+        <span class="box">M</span>
+        <span class="box">N</span>
+        <span class="box">O</span>
+        <span class="box">P</span>
+        <span class="box">Q</span>
+        <span class="box">R</span>
+        <span class="box">S</span>
+        <span class="box">T</span>
+        <span class="box">U</span>
+        <span class="box">V</span>
+        <span class="box">W</span>
+        <span class="box">X</span>
+        <span class="box">Y</span>
+        <span class="box">Z</span>
+    </div>
+
+    <script>
+
+        let element = document.getElementsByClassName('box')
+
+        for (let i = 0; i < element.length; i++) {
+            element[i].setAttribute('draggable', 'true');
+
+            element[i].addEventListener("dragstart", function (event) {
+                event.target.style.backgroundColor = "lightpink";
+                console.log("drag " + "X: " + event.clientX + " Y: " + event.clientY);
+            });
+
+            element[i].addEventListener("dragend", function (event) {
+                event.target.style.backgroundColor = "lightgreen";
+                let x = event.clientX;
+                let y = event.clientY;
+                console.log(event)
+                event.target.style.left = x + "px";
+                event.target.style.top = y + "px";
+                event.target.style.position = "absolute"; //Necessary
+                console.log("dragend" + "X: " + event.clientX + " Y: " + event.clientY);
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>
