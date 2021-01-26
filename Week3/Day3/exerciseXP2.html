@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #box {
+            margin: auto;
+            width: 30%;
+            height: 300px;
+            border: 2px solid blue;
+            padding: 2px;
+        }
+
+        #square1, #square3 {
+            float: left;
+            margin: 5px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #square1 {
+            width: 50px;
+            height: 30px;
+            background-color: #BEA7CC;
+        }
+
+        #square3 {
+            width: 250px;
+            height: 120px;
+            background-color: #F5B5C5;
+        }
+
+        .over {
+            border: 2px dashed #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+        <div id="square1" draggable="true" ondragstart="dragStart(event)"></div>
+
+        <div id="square3" ondrop="dragDrop(event)" ondragover="allowDrop(event)" ondragenter="allowEnter(event)"
+            ondragleave="allowLeave(event)"></div>
+    </div>
+
+    <script>
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function allowEnter(event) {
+            event.target.classList.add('over');
+        }
+
+        function allowLeave(event) {
+            event.target.classList.remove('over');
+        }
+
+        function dragStart(event) {
+            console.log("target:", event.target)
+            console.log("id: ", event.target.id)
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        function dragDrop(event) {
+            event.preventDefault();
+
+            let data = event.dataTransfer.getData("text");
+            console.log("data: ", data)
+
+            let box = document.getElementById(data)
+            event.target.appendChild(box);
+        }
+
+    </script>
+
+</body>
+
+</html>
