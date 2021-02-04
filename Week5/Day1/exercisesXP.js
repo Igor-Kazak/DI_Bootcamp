@@ -1,3 +1,24 @@
+const content = `
+    <form action="exercisesXP.html" method="GET">
+    <div>
+        <label for="from">Your name:</label>
+        <input name="from" id="from" value="Zaphod">
+      </div>
+    <div>
+      <label for="message">Comments:</label>
+      <input name="message" id="message" value="If there is anything more important than my ego around - I want it caught and shot now.">
+    </div>
+    <div>
+      <button>Send</button>
+    </div>
+  </form>
+  <div>
+    <p id=get></p>
+  </div>
+`;
+
+document.body.innerHTML = content;
+
 var url = document.location.href;
 var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
 
