@@ -42,11 +42,23 @@ function compareToTen(num) {
         console.log('success');
     }, 4500))
 
-    Promise.reject(new Error('Ooops something went wrong')).then(function (success) { },
+    Promise.reject(new Error('Ooops something went wrong')).then({},
         function (error) {
             console.log(error);
         });
 
+}
+
+//Exercise 3
+{
+    Promise.resolve(3).then(value => {
+        return value;
+    });
+
+    Promise.reject('Boo').then({},
+        function (error) {
+            return error;
+        });
 }
 
 // //var1
