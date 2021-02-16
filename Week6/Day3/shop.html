@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our shop</title>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap')</style>
+    <link rel="stylesheet" type="text/css" href="shop.css">
+</head>
+<body>
+    
+    <div id=top>
+        <a href="shop.html"><img id=logo src="https://cdn.dribbble.com/users/839429/screenshots/4519779/plane-travel-icon-rebound2.gif" alt="logo"></a>
+    <nav>
+        <ul>
+            <li><a href="collection.html">Collection</a></li>
+            <li><a href="#">Log in</a></li>
+            <li><a href="#">Sign up</a></li>
+        </ul>
+    </nav>
+    </div>
+
+    <h1 id=welcome>Welcome to the best shop ever!</h1>
+        <div id=shop>
+            <form>
+            <label for="itemtext">Item:</label>
+            <input type="text" id="itemtext" name="itemtext">
+            <input type="submit" value="Add item" onclick="add()">
+            <input type="submit" value="Clear all" onclick="clearAll()">
+            </form>
+        </div>
+        <div id="shoplist">
+            <ul id="list">
+            
+            </ul>
+        </div>
+    <script src="shop.js"></script>
+</body>
+</html>
