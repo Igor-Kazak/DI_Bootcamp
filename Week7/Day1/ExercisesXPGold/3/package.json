@@ -1,0 +1,18 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "description": "some description",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon script.js"
+  },
+  "author": "me",
+  "license": "ISC",
+  "dependencies": {
+    "myproject": "^0.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
