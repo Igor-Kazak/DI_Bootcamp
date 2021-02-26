@@ -1,0 +1,14 @@
+h3 {
+    color: white;
+    background-color: DodgerBlue;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    background-color: #282c34;
+    color: white;
+    padding: 4px;
+    font-family: Arial;
+    text-align: center;
+  }
