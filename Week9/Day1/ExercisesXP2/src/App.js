@@ -52,7 +52,7 @@ class App extends React.Component {
   }
 
   goHome = () => {
-    this.setState({ posts: [], postsState: false });
+    this.setState({ posts: [], postsState: false, searchText:'', textToSearch:''  });
   }
 
   render() {
