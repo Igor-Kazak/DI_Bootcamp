@@ -1,0 +1,12 @@
+{
+  "name": "mynative",
+  "displayName": "mynative",
+  "expo": {
+    "name": "mynative",
+    "slug": "mynative",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
