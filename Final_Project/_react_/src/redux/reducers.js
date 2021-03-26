@@ -68,6 +68,7 @@ export const reducerOne = (state = initialState, action = {}) => {
           ...state,
           signedIn: true,
           currentUser: [action.payload],
+          onAir: true,
         }
       }
     case CLEARMSG:
@@ -100,18 +101,3 @@ export const reducerOne = (state = initialState, action = {}) => {
 export const reducer = combineReducers({
   reducerOne
 })
-
-   // case SELECT:
-    //   if (action.payload === '0') {
-    //     return {
-    //       ...state,
-    //       id: action.payload,
-    //       pose: state.poses
-    //     }
-    //   }
-    //   const filter = state.poses.filter(item => { return item.id === parseInt(action.payload) })
-    //   return {
-    //     ...state,
-    //     id: action.payload,
-    //     pose: filter
-    //   }

@@ -25,7 +25,7 @@ class Results extends React.Component {
                 mode: 'cors',
                 cache: 'no-cache',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username: user[0].username, quantity: 10 })
+                body: JSON.stringify({ username: user[0].username, quantity: 20 })
             })
                 .then(res => res.json())
                 .then(data => {
@@ -81,6 +81,7 @@ class Results extends React.Component {
         const { signedIn, signInSwitch, user } = this.props;
         const { result, rating, testTime, wrong } = this.state;
         let percentCorrect = ((rating / result.length) * 100).toFixed(2);
+
         if (signedIn) {
             return (
                 <>
@@ -101,7 +102,7 @@ class Results extends React.Component {
                                         <div className="col">
                                             <div className="p-3 border">Status:
                                             <span style={{ color: `${percentCorrect >= 75 ? 'green' : 'red'}` }}>
-                                                    {percentCorrect >= 75 ? ' passed' : ' not passed'}</span>
+                                                    {(percentCorrect >= 75) && (parseInt(testTime / 60) < 30) ? ' passed' : ' not passed'}</span>
                                             </div>
                                         </div>
                                         <div className="col">

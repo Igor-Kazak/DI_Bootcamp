@@ -36,6 +36,17 @@ class SignIn extends React.Component {
         setTimeout(() => this.props.clearMsg(), 3000);
     }
 
+    handlePressEnter = (event) => {
+        if (event.charCode === 13) {
+            if (event.target.id === 'password') {
+                this.userCheckLogin();
+            }
+            if (event.target.id === 'passwordreg') {
+                this.userCheckRegister();
+            }
+        }
+    }
+
     userCheckLogin = () => {
         let username = document.getElementById('username').value;
         let password = document.getElementById('password').value;
@@ -46,7 +57,7 @@ class SignIn extends React.Component {
         }
         else {
             document.getElementById('loginmessage').textContent = 'Enter username and password!';
-            setTimeout(() => {document.getElementById('loginmessage').textContent = ''}, 3000);
+            setTimeout(() => { document.getElementById('loginmessage').textContent = '' }, 3000);
         }
     }
 
@@ -57,18 +68,24 @@ class SignIn extends React.Component {
         let firstname = document.getElementById('firstname').value;
         let email = document.getElementById('email').value;
         if (username !== '' && password !== '' && lastname !== '' && firstname !== '' && email !== '') {
-            this.props.userRegister(new UserRegister(username, password, lastname, firstname, email));
-            document.getElementById('usernamereg').value = '';
-            document.getElementById('passwordreg').value = '';
-            document.getElementById('lastname').value = '';
-            document.getElementById('firstname').value = '';
-            document.getElementById('email').value = '';
+            if (email.indexOf('@') === -1) {
+                document.getElementById('registermessage').textContent = 'Enter correct e-mail!';
+                setTimeout(() => { document.getElementById('registermessage').textContent = '' }, 3000);
+            }
+            else {
+                this.props.userRegister(new UserRegister(username, password, lastname, firstname, email));
+                document.getElementById('usernamereg').value = '';
+                document.getElementById('passwordreg').value = '';
+                document.getElementById('lastname').value = '';
+                document.getElementById('firstname').value = '';
+                document.getElementById('email').value = '';
+            }
         }
         else {
-          document.getElementById('registermessage').textContent = 'Enter all data!';
-          setTimeout(() => {document.getElementById('registermessage').textContent = ''}, 3000);
+            document.getElementById('registermessage').textContent = 'Enter all data!';
+            setTimeout(() => { document.getElementById('registermessage').textContent = '' }, 3000);
         }
-      
+
     }
 
     render() {
@@ -84,21 +101,23 @@ class SignIn extends React.Component {
             return (
                 <React.Fragment>
 
-                    <div id="login" className="container">
-                        <p style={{ fontWeight: 'bold' }}>LOGIN FORM:</p>
+                    <div id="login" className="container px-5 pt-3 mt-4 pb-4 border bg-light">
+                        <strong>LOGIN FORM:</strong>
                         <form>
-                            <div className="row">
+                            <div className="row mt-2">
                                 <div className="col">
                                     <label htmlFor="username">Enter the username:</label>
-                                    <input type="text" className="form-control" id="username" name="username" placeholder="username" required />
+                                    <input type="text" className="form-control" id="username" name="username"
+                                        placeholder="username" />
                                 </div>
                                 <div className="col">
                                     <label htmlFor="password">Enter the password:</label>
-                                    <input type="password" className="form-control" id="password" name="password" placeholder="password" required />
+                                    <input type="password" className="form-control" id="password" name="password"
+                                        placeholder="password" onKeyPress={this.handlePressEnter} />
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col">
+                                <div className="col pt-3">
                                     <p style={{ color: 'red' }} id="loginmessage">{loginMsgFromServer}</p>
                                 </div>
                                 <div className="col colforbutton">
@@ -109,10 +128,10 @@ class SignIn extends React.Component {
                         </form>
                     </div>
 
-                    <div id="register" className="container mt-5">
-                        <p style={{ fontWeight: 'bold' }}>REGISTER FORM:</p>
+                    <div id="register" className="container px-5 pt-3 pb-4 mt-4 border bg-light">
+                        <strong>REGISTER FORM:</strong>
                         <form>
-                            <div className="row">
+                            <div className="row mt-2">
                                 <div className="col">
                                     <label htmlFor="firstname">Enter the first name:</label>
                                     <input type="text" className="form-control" id="firstname" name="firstname" placeholder="first name" />
@@ -126,18 +145,20 @@ class SignIn extends React.Component {
                                     <input type="email" className="form-control" id="email" name="email" placeholder="e-mail" />
                                 </div>
                             </div>
-                            <div className="row">
+                            <div className="row mt-3">
                                 <div className="col">
                                     <label htmlFor="username">Enter the username:</label>
-                                    <input type="text" className="form-control" id="usernamereg" name="usernamereg" placeholder="username" />
+                                    <input type="text" className="form-control" id="usernamereg" name="usernamereg"
+                                        placeholder="username" />
                                 </div>
                                 <div className="col">
                                     <label htmlFor="password">Enter the password:</label>
-                                    <input type="password" className="form-control" id="passwordreg" name="passwordreg" placeholder="password" />
+                                    <input type="password" className="form-control" id="passwordreg" name="passwordreg"
+                                        placeholder="password" onKeyPress={this.handlePressEnter} />
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col">
+                                <div className="col pt-3">
                                     <p style={{ color: 'red' }} id="registermessage">{regFail}</p>
                                 </div>
                                 <div className="col colforbutton">

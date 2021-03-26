@@ -26,10 +26,13 @@ app.set("db", db);
 
 //-------------------------------------------------------
 
+var timeGetQuestions;
+
 app.post('/getQuestions', (req, res) => {
     const { typeOfTest, quantity } = req.body;
     let orderCriteria = sortRandom(6);
     let orderDirection = sortRandom(2);
+    timeGetQuestions = new Date();
     console.log('-> Server got questions request: ' + typeOfTest, quantity);
     db
         .select('id', 'question', 'a', 'b', 'c', 'd', 'answer', 'topic')
@@ -134,7 +137,7 @@ app.post('/register', function (req, res) {
                     });
             }
             else {
-                res.send({ message: "Error! User already registered!" });
+                res.send([]);
                 console.log('-> User already registered: ' + req.body.username);
             }
         })
@@ -152,7 +155,7 @@ app.post('/sendAnswer', function (req, res) {
         question: question,
         userAnswer: userAnswer,
         correctAnswer: correctAnswer,
-        date: new Date()
+        date: (number.slice(0,4) === '1 of'? timeGetQuestions : new Date())
     }
     db('results_' + username)
         .returning('*')

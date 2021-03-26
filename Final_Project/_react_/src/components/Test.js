@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
 import { userAsyncAnswer, incrementQuestion } from '../redux/actions';
 
 const Test = (props) => {
@@ -8,6 +9,21 @@ const Test = (props) => {
     let ticket = db[numQuestion];
     let progressBar = 0;
     progressBar = parseInt(numQuestion / db.length * 100);
+    const [sec, setSec] = useState('00');
+    const [min, setMin] = useState('00');
+
+    useEffect(() => {
+        var startTime = new Date();
+        const timer = setInterval(() => {
+            let now = new Date();
+            let timeSpent = now - startTime;
+            var timeCount = new Date(timeSpent - 7200000);
+            setSec(('0' + timeCount.getSeconds()).slice(-2));
+            setMin(('0' + timeCount.getMinutes()).slice(-2));
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, []);
 
     function handleAnswer(event) {
         sendAnswer({
@@ -31,11 +47,14 @@ const Test = (props) => {
     if (signedIn && IsOnAir) {
         return (
             <>
-                <div className="container px-5 pt-2">
-                    <div className="progress mb-3">
-                        <div className="progress-bar" role="progressbar" 
-                        style={{ width: `${progressBar}%` }} aria-valuenow={progressBar} 
-                        aria-valuemin="0" aria-valuemax="100">{numQuestion} of {db.length}</div>
+                <div className="container px-5 pt-1">
+                    <div className="mb-2 tr"
+                        style={{ color: (min < 30 ? 'black' : "red") }}>{min}:{sec}
+                    </div>
+                    <div className="col progress mb-3">
+                        <div className="progress-bar" role="progressbar"
+                            style={{ width: `${progressBar}%` }} aria-valuenow={progressBar}
+                            aria-valuemin="0" aria-valuemax="100">{numQuestion} of {db.length}</div>
                     </div>
                     <div className="row gx-5">
                         <div className="col">
